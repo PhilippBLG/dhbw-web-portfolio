@@ -36,28 +36,6 @@
             </form>
         </div>
     </section>
-
-<script>
-    // FILEPATH: /Users/philippbuling/PycharmProjects/dhbw-web-portfolio/jahrgang-2022/js/common.js
-    const form = document.getElementById('fahrtenbuchForm');
-
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Verhindert das Standardverhalten des Formulars
-
-        // Lese die eingegebenen Werte aus den Eingabefeldern
-        const datum = document.getElementById('datum').value;
-        const kilometerstand = document.getElementById('kilometerstand').value;
-        const grund = document.getElementById('grund').value;
-
-        // Rufe die Funktion addFahrt auf und übergebe die Werte
-        addFahrt(datum, kilometerstand, grund);
-
-        // Setze die Eingabefelder zurück
-        form.reset();
-    });
-</script>
-
-
     <footer>
         <div class="fixed-width footer-div">
             <div class="footer-box">
