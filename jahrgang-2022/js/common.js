@@ -1,0 +1,1 @@
+let fahrtenbuch = JSON.parse(localStorage.getItem('fahrtenbuch')) || [];
