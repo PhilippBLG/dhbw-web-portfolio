@@ -23,13 +23,16 @@
     <section>
         <div class="fixed-width no-padding">
             <form id="fahrtenbuchForm">
-                <label for="datum">Datum:</label>
-                <input type="date" id="datum" name="datum" required>
+                <label for="datum">Datum*</label>
+                <p>Tragen Sie hier das Datum der Fahrt ein.</p>
+                <input type="date" id="datum" name="datum" placeholder="dd.mm.yyyy" required>
 
-                <label for="kilometerstand">Kilometerstand:</label>
+                <label for="kilometerstand">Kilometerstand*</label>
+                <p>Tragen Sie hier den Zählerstand am Ende der Fahrt ein.</p>
                 <input type="number" id="kilometerstand" name="kilometerstand" required>
 
-                <label for="grund">Grund:</label>
+                <label for="grund">Grund der Fahrt*</label>
+                <p>Tragen Sie hier den Grund der Fahrt ein.</p>
                 <input type="text" id="grund" name="grund" required>
 
                 <button type="submit">Fahrt hinzufügen</button>

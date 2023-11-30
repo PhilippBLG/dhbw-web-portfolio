@@ -24,3 +24,10 @@ button {
 .app-grid img {
     height: 3em;
 }
+
+.delete-button {
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    height: 2.5em!important;
+}

@@ -1,0 +1,12 @@
+label {
+    display: block;
+    margin-top: 1em;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+form p {
+    font-style: italic;
+    font-weight: 100;
+    margin: .4em 0;
+}

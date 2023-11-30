@@ -59,8 +59,19 @@ function showFahrtenbuch() {
         const distance = document.createElement("img");
         distance.src = "img/distance.png";
 
+        const note = document.createElement("img");
+        note.src = "img/note.png";
+
         const grundElement = document.createElement("p");
         grundElement.textContent = `${fahrt.grund}`;
+
+        // Erstellen des Lösch-Buttons
+        const deleteButton = document.createElement("img");
+        deleteButton.src = "img/delete.png";
+        deleteButton.classList.add("delete-button");
+        deleteButton.addEventListener("click", () => {
+            deleteEntry(i);
+        });
 
         // Hinzufügen der HTML-Elemente zur Fahrt
         fahrtElement.appendChild(calendar);
@@ -69,11 +80,20 @@ function showFahrtenbuch() {
         fahrtElement.appendChild(kilometerstandElement);
         fahrtElement.appendChild(distance);
         fahrtElement.appendChild(differenzElement);
+        fahrtElement.appendChild(note);
         fahrtElement.appendChild(grundElement);
+        fahrtElement.appendChild(deleteButton);
 
         // Hinzufügen der Fahrt zum Fahrtenbuch-Container
         fahrtenbuchContainer.appendChild(fahrtElement);
     }
+}
+
+// Funktion zum Löschen eines Eintrags
+function deleteEntry(index) {
+    fahrtenbuch.splice(index, 1);
+    showFahrtenbuch(); // Aktualisieren des Fahrtenbuchs nach dem Löschen
+    saveFahrtenbuch(); // Speichern des Fahrtenbuchs nach dem Löschen
 }
 
 
