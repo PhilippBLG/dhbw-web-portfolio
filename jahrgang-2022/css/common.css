@@ -8,10 +8,11 @@ body {
     padding-bottom: 5em;
 }
 
-a:any-link{
+a{
     color: inherit;
     text-decoration: none;
 }
+
 
 h1 {
     font-size: 2em;
@@ -96,4 +97,15 @@ footer nav{
 
 .no-padding {
     padding: 0;
+}
+
+button {
+    background-color: rgb(26,26,26);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.3em;
+    font-family: unset;
 }

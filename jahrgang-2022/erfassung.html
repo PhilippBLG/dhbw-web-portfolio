@@ -2,6 +2,7 @@
 <html lang="de">
 <head>
     <title>DriveLOG</title>
+    <link rel="stylesheet" href="css/reset.css"/>
     <link rel="stylesheet" href="css/common.css"/>
     <link rel="stylesheet" href="css/erfassung.css"/>
 </head>
@@ -25,17 +26,22 @@
             <form id="fahrtenbuchForm">
                 <label for="datum">Datum*</label>
                 <p>Tragen Sie hier das Datum der Fahrt ein.</p>
-                <input type="date" id="datum" name="datum" placeholder="dd.mm.yyyy" required>
+                <input type="date" id="datum" name="datum" placeholder="02.11.2023" required>
 
                 <label for="kilometerstand">Kilometerstand*</label>
                 <p>Tragen Sie hier den Zählerstand am Ende der Fahrt ein.</p>
-                <input type="number" id="kilometerstand" name="kilometerstand" required>
+                <input type="number" id="kilometerstand" name="kilometerstand" placeholder="8450" required>
 
                 <label for="grund">Grund der Fahrt*</label>
                 <p>Tragen Sie hier den Grund der Fahrt ein.</p>
-                <input type="text" id="grund" name="grund" required>
-
-                <button type="submit">Fahrt hinzufügen</button>
+                <input type="text" id="grund" name="grund" placeholder="Fahrt zu Oma und Opa">
+                <div class="button-div">
+                    <a class="cancel-button" href="verwaltung.html" style="padding: 10px 3em">
+                    Abbrechen
+                    </a>
+                    <button type="submit" style="padding: 10px 3em">Speichern</button>
+                </div>
+                
             </form>
         </div>
     </section>
