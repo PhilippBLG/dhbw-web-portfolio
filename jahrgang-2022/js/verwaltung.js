@@ -1,4 +1,7 @@
+// Autor: Philipp Buling
 
+
+// Array für das Fahrtenbuch
 function calculateDistance(currentIndex) {
     if (currentIndex === fahrtenbuch.length - 1) {
         let currentFahrt = fahrtenbuch[currentIndex];
@@ -12,6 +15,7 @@ function calculateDistance(currentIndex) {
     return 0;
 }
 
+// Funktion zum Speichern des Fahrtenbuchs
 function loadFahrtenbuch() {
     const fahrtenbuchData = localStorage.getItem('fahrtenbuch');
     if (fahrtenbuchData) {
@@ -19,6 +23,7 @@ function loadFahrtenbuch() {
     }
 }
 
+// Funktion zum Anzeigen des Fahrtenbuchs
 function showFahrtenbuch() {
     const fahrtenbuchContainer = document.getElementById("fahrtenbuch-container");
     fahrtenbuchContainer.innerHTML = "";
@@ -77,14 +82,18 @@ function showFahrtenbuch() {
         fahrtElement.appendChild(grundElement);
         fahrtElement.appendChild(deleteButton);
 
+        // Hinzufügen der Fahrt zum Fahrtenbuch-Container
         fahrtenbuchContainer.appendChild(fahrtElement);
     }
 }
 
+// Funktion zum Löschen eines Eintrags
 function deleteEntry(index) {
     fahrtenbuch.splice(index, 1);
     showFahrtenbuch();
     saveFahrtenbuch();
 }
+
+
 
 showFahrtenbuch();

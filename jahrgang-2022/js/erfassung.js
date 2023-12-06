@@ -1,5 +1,8 @@
+
+// Formular
 const form = document.getElementById('fahrtenbuchForm');
 
+    // Event Listener
     form.addEventListener('submit', function(event) {
         event.preventDefault();
         const datum = document.getElementById('datum').value;
@@ -10,6 +13,7 @@ const form = document.getElementById('fahrtenbuchForm');
         window.location.href = "verwaltung.html";
     });
 
+// Funktion zum Speichern des Fahrtenbuchs
 function addFahrt(datum, kilometerstand, grund) {
     let fahrt = {
         datum: new Date(datum),
