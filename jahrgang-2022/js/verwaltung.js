@@ -9,7 +9,7 @@ function calculateDistance(currentIndex) {
         let nextFahrt = fahrtenbuch[currentIndex + 1];
         return currentFahrt.kilometerstand - nextFahrt.kilometerstand;
     }
-    return 0; // Wenn es keine vorherige Fahrt gibt, ist die Differenz 0
+    return 0;
 }
 
 function loadFahrtenbuch() {
@@ -19,24 +19,19 @@ function loadFahrtenbuch() {
     }
 }
 
-
-// Funktion zum Anzeigen des Fahrtenbuchs
 function showFahrtenbuch() {
     const fahrtenbuchContainer = document.getElementById("fahrtenbuch-container");
-    fahrtenbuchContainer.innerHTML = ""; // Leeren des Containers, um vorherige Einträge zu entfernen
+    fahrtenbuchContainer.innerHTML = "";
 
-    // Sortieren des Fahrtenbuchs nach dem Fahrt.Datum
     fahrtenbuch.sort((a, b) => new Date(a.datum) - new Date(b.datum));
-    fahrtenbuch.reverse(); // Umkehren der Reihenfolge, damit die neueste Fahrt zuerst angezeigt wird
+    fahrtenbuch.reverse();
 
     for (let i = 0; i < fahrtenbuch.length; i++) {
         let fahrt = fahrtenbuch[i];
 
-        // Erstellen der HTML-Elemente für die Fahrt
         const fahrtElement = document.createElement("div");
         fahrtElement.classList.add("app-grid");
 
-        // Erstellen des Bild-Elements
         const calendar = document.createElement("img");
         calendar.src = "img/calendar.png";
 
@@ -65,7 +60,6 @@ function showFahrtenbuch() {
         const grundElement = document.createElement("p");
         grundElement.textContent = `${fahrt.grund}`;
 
-        // Erstellen des Lösch-Buttons
         const deleteButton = document.createElement("img");
         deleteButton.src = "img/delete.png";
         deleteButton.classList.add("delete-button");
@@ -73,7 +67,6 @@ function showFahrtenbuch() {
             deleteEntry(i);
         });
 
-        // Hinzufügen der HTML-Elemente zur Fahrt
         fahrtElement.appendChild(calendar);
         fahrtElement.appendChild(datumElement);
         fahrtElement.appendChild(counter);
@@ -84,18 +77,14 @@ function showFahrtenbuch() {
         fahrtElement.appendChild(grundElement);
         fahrtElement.appendChild(deleteButton);
 
-        // Hinzufügen der Fahrt zum Fahrtenbuch-Container
         fahrtenbuchContainer.appendChild(fahrtElement);
     }
 }
 
-// Funktion zum Löschen eines Eintrags
 function deleteEntry(index) {
     fahrtenbuch.splice(index, 1);
-    showFahrtenbuch(); // Aktualisieren des Fahrtenbuchs nach dem Löschen
-    saveFahrtenbuch(); // Speichern des Fahrtenbuchs nach dem Löschen
+    showFahrtenbuch();
+    saveFahrtenbuch();
 }
-
-
 
 showFahrtenbuch();
